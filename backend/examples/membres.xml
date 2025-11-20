@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<membres>
+  <membre>
+    <numeroMembre>MEM0001</numeroMembre>
+    <nom>Dupont</nom>
+    <prenom>Marie</prenom>
+    <email>marie.dupont@email.com</email>
+    <telephone>01 23 45 67 89</telephone>
+    <adresse>
+      <rue>123 Avenue des Champs</rue>
+      <ville>Paris</ville>
+      <codePostal>75008</codePostal>
+    </adresse>
+    <dateInscription>2024-01-15</dateInscription>
+    <statut>actif</statut>
+  </membre>
+  <membre>
+    <numeroMembre>MEM0002</numeroMembre>
+    <nom>Martin</nom>
+    <prenom>Pierre</prenom>
+    <email>pierre.martin@email.com</email>
+    <telephone>06 12 34 56 78</telephone>
+    <adresse>
+      <rue>456 Rue de la République</rue>
+      <ville>Lyon</ville>
+      <codePostal>69001</codePostal>
+    </adresse>
+    <dateInscription>2024-02-20</dateInscription>
+    <statut>actif</statut>
+  </membre>
+</membres>

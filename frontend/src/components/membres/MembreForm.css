@@ -1,0 +1,33 @@
+.membre-form {
+  padding: 1.5rem;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #6c757d;
+}
+
+.form-section-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Réutilisation des styles de modal depuis LivreForm.css */
+.modal-overlay,
+.modal-content,
+.modal-header,
+.close-btn,
+.form-row,
+.form-group,
+.form-label,
+.form-input,
+.form-input.error,
+.error-text,
+.form-actions {
+  /* Ces styles sont déjà définis dans LivreForm.css */
+}

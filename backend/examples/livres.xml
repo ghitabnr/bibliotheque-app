@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<livres>
+  <livre>
+    <isbn>978-2-07-036822-8</isbn>
+    <titre>L'Étranger</titre>
+    <auteur>Albert Camus</auteur>
+    <editeur>Gallimard</editeur>
+    <anneePublication>1942</anneePublication>
+    <genre>Roman</genre>
+    <disponible>true</disponible>
+    <description>Un classique de la littérature française</description>
+  </livre>
+  <livre>
+    <isbn>978-2-253-04081-2</isbn>
+    <titre>1984</titre>
+    <auteur>George Orwell</auteur>
+    <editeur>Folio</editeur>
+    <anneePublication>1949</anneePublication>
+    <genre>Science-Fiction</genre>
+    <disponible>true</disponible>
+    <description>Dystopie célèbre sur un régime totalitaire</description>
+  </livre>
+  <livre>
+    <isbn>978-2-266-28656-8</isbn>
+    <titre>Le Seigneur des Anneaux</titre>
+    <auteur>J.R.R. Tolkien</auteur>
+    <editeur>Pocket</editeur>
+    <anneePublication>1954</anneePublication>
+    <genre>Fantasy</genre>
+    <disponible>false</disponible>
+    <description>Épopée fantastique en Terre du Milieu</description>
+  </livre>
+</livres>

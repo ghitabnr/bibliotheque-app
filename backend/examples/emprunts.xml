@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emprunts>
+  <emprunt>
+    <id>emp001</id>
+    <membre>
+      <id>mem001</id>
+      <numeroMembre>MEM0001</numeroMembre>
+      <nom>Dupont</nom>
+      <prenom>Marie</prenom>
+    </membre>
+    <livre>
+      <id>liv001</id>
+      <isbn>978-2-266-28656-8</isbn>
+      <titre>Le Seigneur des Anneaux</titre>
+      <auteur>J.R.R. Tolkien</auteur>
+    </livre>
+    <dateEmprunt>2024-03-01T10:30:00</dateEmprunt>
+    <dateRetourPrevue>2024-03-15</dateRetourPrevue>
+    <statut>emprunté</statut>
+  </emprunt>
+</emprunts>

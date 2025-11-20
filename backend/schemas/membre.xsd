@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+  
+  <xs:element name="membres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="membre" type="membreType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="membreType">
+    <xs:sequence>
+      <xs:element name="numeroMembre" type="xs:string"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="prenom" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="telephone" type="xs:string"/>
+      <xs:element name="adresse" type="adresseType" minOccurs="0"/>
+      <xs:element name="dateInscription" type="xs:date"/>
+      <xs:element name="statut" type="statutMembreType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="adresseType">
+    <xs:sequence>
+      <xs:element name="rue" type="xs:string" minOccurs="0"/>
+      <xs:element name="ville" type="xs:string" minOccurs="0"/>
+      <xs:element name="codePostal" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="statutMembreType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="actif"/>
+      <xs:enumeration value="suspendu"/>
+      <xs:enumeration value="inactif"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

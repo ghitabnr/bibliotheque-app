@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+  
+  <xs:element name="emprunts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="emprunt" type="empruntType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="empruntType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="membre" type="membreReferenceType"/>
+      <xs:element name="livre" type="livreReferenceType"/>
+      <xs:element name="dateEmprunt" type="xs:dateTime"/>
+      <xs:element name="dateRetourPrevue" type="xs:date"/>
+      <xs:element name="dateRetourEffective" type="xs:date" minOccurs="0"/>
+      <xs:element name="statut" type="statutEmpruntType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="membreReferenceType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="numeroMembre" type="xs:string"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="prenom" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="livreReferenceType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="isbn" type="xs:string"/>
+      <xs:element name="titre" type="xs:string"/>
+      <xs:element name="auteur" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="statutEmpruntType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emprunté"/>
+      <xs:enumeration value="retourné"/>
+      <xs:enumeration value="en retard"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

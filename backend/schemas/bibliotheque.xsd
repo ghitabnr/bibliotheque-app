@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+  
+  <xs:element name="bibliotheque">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="livres"/>
+        <xs:element ref="membres"/>
+        <xs:element ref="emprunts"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+      <xs:attribute name="dateExport" type="xs:dateTime" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="livres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="livre" type="livreType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="membres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="membre" type="membreType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="emprunts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="emprunt" type="empruntType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Réutilisation des types définis dans les autres schémas -->
+  <xs:complexType name="livreType">
+    <xs:sequence>
+      <xs:element name="isbn" type="xs:string"/>
+      <xs:element name="titre" type="xs:string"/>
+      <xs:element name="auteur" type="xs:string"/>
+      <xs:element name="editeur" type="xs:string"/>
+      <xs:element name="anneePublication" type="xs:gYear"/>
+      <xs:element name="genre" type="xs:string"/>
+      <xs:element name="disponible" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="membreType">
+    <xs:sequence>
+      <xs:element name="numeroMembre" type="xs:string"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="prenom" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="dateInscription" type="xs:date"/>
+      <xs:element name="statut" type="statutMembreType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="empruntType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="idMembre" type="xs:string"/>
+      <xs:element name="idLivre" type="xs:string"/>
+      <xs:element name="dateEmprunt" type="xs:dateTime"/>
+      <xs:element name="dateRetourPrevue" type="xs:date"/>
+      <xs:element name="statut" type="statutEmpruntType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="statutMembreType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="actif"/>
+      <xs:enumeration value="suspendu"/>
+      <xs:enumeration value="inactif"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="statutEmpruntType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emprunté"/>
+      <xs:enumeration value="retourné"/>
+      <xs:enumeration value="en retard"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
